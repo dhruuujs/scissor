@@ -1,0 +1,21 @@
+{   "manifest_version":3,
+    "name":"Block Ball",
+    "version":"1.0",
+    "description":"Block shits for you, lill nigga",
+    "permission":["activeTab","storage","tabs"],
+    "background":{
+        "service_worker":"worker.js"
+    },
+    "content_scripts":[
+        {
+        "js":["contentScript.js"],
+        "matches": ["https://*/*","http://*/*"]
+        }
+    ],
+
+    "action":{
+        "default_title":"Block Ball",
+        "default_popup":"popup.html"
+    }
+   
+}

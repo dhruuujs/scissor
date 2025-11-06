@@ -1,0 +1,31 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+
+section{
+    display:flex;
+    flex-direction: column;
+    width: 280px;
+}
+
+.inputGroup{
+    display: flex;
+}
+
+.inputGroup input[type="text"]{
+    border:none;
+    outline:none;
+    width:150px;
+    height:40px;
+}
+
+.inputGroup button{
+    border:none;
+    font-size:1rem;
+    padding:0.5em;
+    color:#222;
+    border-radius:5px;
+    background:orangered;
+}
