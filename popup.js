@@ -2,6 +2,8 @@ const input = document.getElementById("urlInput")
 const addBtn = document.getElementById("addBtn")
 const list = document.getElementById("urlList")
 
+
+try{
 //Loas the blocked site
 chrome.storage.local.get("blockedSites",({blockedSites})=>{
     if(blockedSites) blockedSites.forEach(addListItem);
@@ -12,19 +14,17 @@ function addListItem(site){
     li.textContent = site;
     const delBtn = document.createElement("button");
     delBtn.textContent='x';
-    delBtn.onClick = async ()=>{
+    delBtn.onclick = async ()=>{
         const {blockedSites} = await chrome.storage.local.get("blockedSites");
         const updated = blockedSites.filter(s=>s!= site);
         await chrome.storage.local.set({blockedSites:updated});
         li.remove();
     };
-    li.append(delBtn);
-    list.append(li)
+    li.appendChild(delBtn);
+    list.appendChild(li)
 }
 
-
-
-addBtn.onClick = async ()=>{
+addBtn.onclick = async ()=>{
     const site = input.value.trim();
     if(!site) return;
     const {blockedSites} = await chrome.storage.local.get("blockedSites");
@@ -33,3 +33,6 @@ addBtn.onClick = async ()=>{
     addListItem(site);
     input.value="";
 };
+}catch(err){
+    alert("Error",err);
+}
