@@ -7,25 +7,35 @@
 section{
     display:flex;
     flex-direction: column;
-    width: 280px;
+    width:320px;
+    min-height: 500px;
+
 }
 
 .inputGroup{
     display: flex;
 }
 
-.inputGroup input[type="text"]{
-    border:none;
+.inputGroup #inputBox{
+    border-top:none;
+    border-right:none;
+    border-bottom:1px solid #222;
+    border-left:none;
     outline:none;
+    font-size:18px;
     width:150px;
     height:40px;
+    padding:0.1em;
+    margin:1em 0 0 1em;
 }
 
 .inputGroup button{
     border:none;
+    min-width:50px;
     font-size:1rem;
-    padding:0.5em;
+    padding:0.1em;
     color:#222;
-    border-radius:5px;
+    border-radius:3px;
     background:orangered;
+    margin:1em 0 0 1em;
 }
