@@ -14,7 +14,10 @@
  
     "host_permissions":["http://*/*","https://*/*"],
 
-    "permission":["webNavigation","storage","tabs"],
+    "permission":["storage","tabs","webNavigation"],
 
-    "web_accessible_resources":[{}]
+    "web_accessible_resources":[{
+        "resources":["block.html"],
+        "matches":["<all_urls>"]
+    }]
 }
