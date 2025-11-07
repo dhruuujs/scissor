@@ -20,7 +20,7 @@
         "webNavigation"],
 
     "web_accessible_resources":[{
-        "resources":["block.html"],
+        "resources":["blocked.html"],
         "matches":["<all_urls>"]
     }]
 }
