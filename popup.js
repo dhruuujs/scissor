@@ -4,10 +4,7 @@ const list = document.getElementById("urlList")
 
 console.log("Popup loaded");
 
-
 //Loas the blocked site
-
-
 function getBlockedSites(){
     return new Promise((resolve)=>{
         chrome.storage.local.get("blockedSites",(result)=>{
@@ -16,12 +13,11 @@ function getBlockedSites(){
     });
 }
 
-function setBlockedSites(){
+function setBlockedSites(sites){
     return new Promise((resolve)=>{
         chrome.storage.local.set({blockedSites:sites}, resolve);
     });
 }
-
 
 
 (async()=>{
@@ -35,6 +31,7 @@ function addListItem(site){
     li.textContent = site;
 
     const delBtn = document.createElement("button");
+    delBtn.setAttribute("class","closeBtn");
     delBtn.textContent='x';
 
     delBtn.onclick = async ()=>{
