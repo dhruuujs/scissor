@@ -1,4 +1,4 @@
-const defaultBlocked = ["facebook.com","instagram.com"];
+const defaultBlocked = ["facebook.com"];
 
 chrome.runtime.onInstalled.addListener(()=>{
     chrome.storage.local.set({blockedSites:defaultBlocked});
@@ -29,4 +29,4 @@ if(blockedSites.some(site=> url.includes(site))){
         url: chrome.runtime.getURL("blocked.html")
     });
 }
-},{url:[{urlMatches:"*"}] });
+},{url:[{urlMatches:".*"}] });
